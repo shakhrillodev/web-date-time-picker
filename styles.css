@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    list-style-type: none;
+}
+
+
+body{
+    padding-top: 200px;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.calendar-input-container{
+    position: relative;
+    display: flex;
+    width: 150px;
+}
+
+[class^="sn-dtpick-parent"]{
+    display: flex;
+    width: 200px;
+    padding: 10px 5px;
+    gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+[class^="sn-dtpick-input"]{
+    border: none;
+    outline: none;
+    width: 70%;
+    flex-grow: 1;
+}
+
+
+.sn-dtpick-panel{
+    background: #3C3A3A;
+    color: #D6D6D6;
+    border-radius: 5px;
+    font-weight: bold;
+    position: absolute;
+    left: 210px;
+    top: 0px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+}
+
+.sn-date-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px 0px 10px;
+}
+
+.sn-time-panel {
+    padding: 20px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 23px;
+}
+
+.sn-time-head{
+    display: flex;
+    width: 100px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+
+.sn-time-head input{
+    outline: none;
+    border: none;
+    color: white;
+    width: 10px;
+    flex: 1 1 10px;
+    height: min-content;
+    text-align: center;
+    background: transparent;
+}
+
+.sn-time-body {
+    display: flex;
+    gap: 10px;
+    border: 1px solid #535353;
+    padding: 10px 10px;
+    height: 245px;
+}
+
+.sn-time-body > ul{
+    overflow-y: scroll;
+}
+
+.sn-time-body li{
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sn-time-body li:hover{
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+.sn-time-body > ul::-webkit-scrollbar {
+    width: 10px;
+}  
+
+.sn-time-body > ul::-webkit-scrollbar-track {
+    width: 10px;
+}
+
+.sn-time-body > ul::-webkit-scrollbar-thumb {
+    background: rgba(139, 139, 139, 0.7); 
+    border-radius: 10px;
+}
+ 
+.sn-time-body > ul::-webkit-scrollbar-thumb:hover {
+    background: rgb(139, 139, 139); 
+}
+
+.sn-date-head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sn-date-head > :last-child{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.sn-weekdays{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    border-top: 1px solid #535353;
+    padding: 10px 0px;
+}
+
+.sn-weekdays p{
+    flex: 1 0 40px;
+    text-align: center;
+}
+
+.sn-date-body{
+    position: relative;
+    border-bottom: 1px solid #535353;
+}
+
+.sn-dbody-days{
+    display: grid;
+    grid-template-columns: repeat(7, 40px);
+    grid-template-rows: repeat(6, 30px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.sn-dbody-months, .sn-dbody-years{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3C3A3A;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.sn-dbody-months > div{
+    width: 100%;
+    height: 100%;
+    background-color: #3C3A3A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sn-dbody-days > div:hover, .sn-dbody-months > div:hover, .sn-dbody-years > div:hover{
+    border: 2px solid rgba(124, 124, 124, 0.7);
+}
+
+.sn-dbody-years{
+    z-index: 1;
+}
+
+.sn-dbody-years > div{
+    width: 100%;
+    height: 100%;
+    background-color: #3C3A3A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sn-dbody-days > div{
+    background: #3C3A3A;
+    color: #7D7B7C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.sn-dbody-days > .sn-active{
+    color: #D6D6D6;
+}
+
+.sn-dbody-days > .sn-d-clicked{
+    background-color: #0477D4;
+    color: #D6D6D6;
+}
+
+
+.sn-today{ 
+    border: 2px solid rgb(124, 124, 124);
+}
+
+.sn-hide {
+    display: none;
+}
+
+
+.sn-footer{
+    grid-column: 1/3;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 10px 10px 10px;
+}
+
+.sn-t-clicked{
+    background-color: rgba(255, 255, 255, 0.3)
+}
